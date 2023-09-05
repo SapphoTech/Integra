@@ -12,3 +12,12 @@ Velocity is a sleek, performant web framework for Rust, harnessing the power of 
 ## 🚀 Quickstart
 
 To-do
+
+## 📘 Usage
+
+To-do
+
+🤝 Contributing
+
+To-do
+
