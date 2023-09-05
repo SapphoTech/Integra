@@ -15,7 +15,12 @@ To-do
 
 ## 📘 Usage
 
-To-do
+```rust
+pub fn initialize_routes() {
+    ROUTER.get("/", Box::new(index));
+    ROUTER.get("/hello", Box::new(greet));
+}
+```
 
 ## 🤝 Contributing
 
