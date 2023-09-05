@@ -17,6 +17,9 @@ To-do
 
 ## 📘 Usage
 
+Unique concept right now is working.
+Will be published soon.
+
 ```rust
 pub fn initialize_routes() {
     ROUTER.get("/", Box::new(index));
