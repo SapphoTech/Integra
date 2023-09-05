@@ -1,6 +1,6 @@
-# Velocity Web Framework
+# Jet Web Framework
 
-Velocity is a sleek, performant web framework for Rust, harnessing the power of the `hyper` library. It's designed for developers who seek speed without sacrificing simplicity, offering a streamlined approach to web development in Rust.
+Jet is a sleek, performant web framework for Rust, harnessing the power of the `hyper` library. It's designed for developers who seek speed without sacrificing simplicity, offering a streamlined approach to web development in Rust.
 
 ## 🌟 Features
 
