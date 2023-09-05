@@ -1,6 +1,6 @@
-# Jet Web Framework
+# Integra Web Framework
 
-Jet is a sleek, performant web framework for Rust, harnessing the power of the `hyper` library. It's designed for developers who seek speed without sacrificing simplicity, offering a streamlined approach to web development in Rust.
+Integra is a sleek, performant web framework for Rust, harnessing the power of the `hyper` library. It's designed for developers who seek speed without sacrificing simplicity, offering a streamlined approach to web development in Rust.
 
 ## 🌟 Features
 
