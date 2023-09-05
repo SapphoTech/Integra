@@ -4,7 +4,7 @@ Velocity is a sleek, performant web framework for Rust, harnessing the power of 
 
 ## 🌟 Features
 
-- **Blazing Fast**: Built atop `hyper`, one of Rust's fastest web libraries.
+- **Fast**: Built on top of `hyper`, one of Rust's fastest web libraries.
 - **Explicit Routing**: Define routes explicitly with a clear and intuitive API.
 - **Safety First**: Benefit from Rust's strong safety guarantees.
 - **Minimalistic Design**: No bloat, just the essentials.
