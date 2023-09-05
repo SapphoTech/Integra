@@ -17,7 +17,7 @@ To-do
 
 To-do
 
-🤝 Contributing
+## 🤝 Contributing
 
 To-do
 
