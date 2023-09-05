@@ -11,8 +11,4 @@ Velocity is a sleek, performant web framework for Rust, harnessing the power of 
 
 ## 🚀 Quickstart
 
-1. Ensure [Rust](https://rust-lang.org) and `cargo` are installed.
-2. Start a new project:
-   ```bash
-   cargo new your_project_name
-   cd your_project_name
+To-do
