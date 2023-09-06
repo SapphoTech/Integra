@@ -87,7 +87,7 @@ To-do
 
 ## 🎯 ROADMAP 
 
-- **Routing system (Inspired by NestJS)**
+- **Routing system**
   - [ ] **Modules**
     - ☐ Define application's structure using modules
     - ☐ Module encapsulation
@@ -116,8 +116,7 @@ To-do
   - [ ] **Repositories**
     - ☐ Generic Repository pattern
     - ☐ User Repository
-  - [ ] **Providers and Services**
-    - ☐ Dependency injection (or equivalent pattern)
+  - [ ] **Providers and Services** 
     - ☐ Custom providers
     - ☐ Singleton services
   - [ ] **Views**
