@@ -86,16 +86,26 @@ Integra is a sleek, performant web framework for Rust, harnessing the power of t
 To-do
 
 ## 🎯 ROADMAP 
-
+ 
 - **Routing system**
   - [ ] **Modules**
     - ☐ Define application's structure using modules
     - ☐ Module encapsulation
     - ☐ Shared modules
   - [ ] **Controllers**
-    - ☐ Declarative routes using macro attributes (e.g., #[get("/hello/<name>/<age>")])
+    - ☐ Declarative routes using macro attributes (e.g., `#[get("/hello/<name>/<age>")])`
     - ☐ Route parameters
     - ☐ Request, Response objects handling
+  - [ ] **Supported requests**
+    - [x] GET
+    - [ ] POST
+    - [ ] PUT
+    - [ ] DELETE
+    - [ ] HEAD
+    - [ ] CONNECT
+    - [ ] OPTIONS
+    - [ ] TRACE
+    - [ ] PATCH
   - [ ] **Middleware**
     - ☐ Middleware for request/response manipulation
     - ☐ Execution order
@@ -104,8 +114,8 @@ To-do
   - [ ] **Interceptors**
     - ☐ Transforming responses
     - ☐ Handling request/response lifecycle
-  - [ ] **Decorators**
-    - ☐ Custom decorators for extracting custom data from requests
+  - [ ] **Macro Attributes**
+    - ☐ Custom macro attributes for extracting custom data from requests
 
 - **Framework Architecture**
   - [ ] **Models**
@@ -116,7 +126,7 @@ To-do
   - [ ] **Repositories**
     - ☐ Generic Repository pattern
     - ☐ User Repository
-  - [ ] **Providers and Services** 
+  - [ ] **Providers and Services**
     - ☐ Custom providers
     - ☐ Singleton services
   - [ ] **Views**
