@@ -3,7 +3,7 @@
 
 Integra is a sleek, performant web framework for Rust, harnessing the power of the `hyper` library.
 
-![Crates.io](https://img.shields.io/crates/v/integra)
+![Crates.io](https://img.shields.io/crates/v/integra) 
 
 ## 🌟 Features
 
@@ -84,6 +84,39 @@ Integra is a sleek, performant web framework for Rust, harnessing the power of t
 ## 📘 Usage
 
 To-do
+
+## 🎯 ROADMAP 
+
+- **Routing system**
+  - **Supported requests**
+    - [x] GET
+    - [ ] POST
+    - [ ] PUT
+    - [ ] DELETE
+    - [ ] HEAD
+    - [ ] CONNECT
+    - [ ] OPTIONS
+    - [ ] TRACE
+    - [ ] PATCH
+
+- **Framework Architecture**
+  - [ ] **Controllers**
+    - ☐ Support for defining and managing controllers
+    - ☐ Middleware integration
+    - ☐ Data validation and error handling
+  - [ ] **Views**
+    - ☐ Template engine integration
+    - ☐ Support for dynamic content rendering
+    - ☐ Layouts and partials
+  - [ ] **Models**
+    - ☐ Integration with Diesel ORM
+    - ☐ Support for migrations
+    - ☐ CRUD operations
+    - ☐ Advanced querying and filtering
+  - [ ] **Repositories**
+    - ☐ Generic Repository pattern
+    - ☐ User Repository
+    - ☐ (Other specific repositories)
 
 ## 🤝 Contributing
 
