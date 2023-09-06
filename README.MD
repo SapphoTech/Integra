@@ -18,9 +18,6 @@ To-do
 
 ## 📘 Usage
 
-Unique concept right now is working.
-Will be published soon.
-
 ```rust
 use crate::app::{index, greet};
 use integra::core::router::{Route, ROUTER};
