@@ -88,14 +88,6 @@ To-do
 ## 🎯 ROADMAP 
  
 - **Routing system**
-  - [ ] **Modules**
-    - ☐ Define application's structure using modules
-    - ☐ Module encapsulation
-    - ☐ Shared modules
-  - [ ] **Controllers**
-    - ☐ Declarative routes using macro attributes (e.g., `#[get("/hello/<name>/<age>")])`
-    - ☐ Route parameters
-    - ☐ Request, Response objects handling
   - [ ] **Supported requests**
     - [x] GET
     - [ ] POST
@@ -106,6 +98,14 @@ To-do
     - [ ] OPTIONS
     - [ ] TRACE
     - [ ] PATCH
+  - [ ] **Modules**
+    - ☐ Define application's structure using modules
+    - ☐ Module encapsulation
+    - ☐ Shared modules
+  - [ ] **Controllers**
+    - ☐ Declarative routes using macro attributes (e.g., `#[get("/hello/<name>/<age>")])`
+    - ☐ Route parameters
+    - ☐ Request, Response objects handling
   - [ ] **Middleware**
     - ☐ Middleware for request/response manipulation
     - ☐ Execution order
