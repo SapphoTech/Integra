@@ -25,7 +25,6 @@ impl Route {
         };
         ROUTER.register(route);
     }
-    // You can add similar methods for POST, PUT, DELETE, etc.
 }
 
 pub struct Router {
