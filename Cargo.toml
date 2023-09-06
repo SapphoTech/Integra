@@ -1,0 +1,20 @@
+[package]
+name = "integra"
+version = "0.0.3"
+edition = "2021"
+ 
+authors = ["SapphoTech"]
+description = "Integra is a sleek, elegant, performant web framework for Rust, harnessing the power of the hyper library."
+license = "Apache-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+hyper = { version = "0.14", features = ["full"] } # enabling all features
+tokio = { version = "1", features = ["full"] }
+lazy_static = "1.4"
+
+[build-dependencies]
+walkdir = "2"
+hyper = "0.14"
+lazy_static = "1.4"

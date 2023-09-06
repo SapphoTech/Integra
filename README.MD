@@ -20,7 +20,7 @@ To-do
 
 ```rust
 use crate::app::{index, greet};
-use integra::core::router::{Route, ROUTER};
+use integra::core::router::{Route};
 
 pub fn initialize_routes() {
     Route::get("/", index);
