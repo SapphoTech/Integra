@@ -104,7 +104,6 @@ To-do
     - ☐ Module encapsulation
     - ☐ Shared modules
   - [ ] **Controllers**
-    - ☐ Declarative routes using macro attributes (e.g., `#[get("/hello/<name>/<age>")])`
     - ☐ Route parameters
     - ☐ Request, Response objects handling
   - [ ] **Supported requests**
