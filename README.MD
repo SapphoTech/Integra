@@ -32,7 +32,7 @@ hyper = "0.14"
 ```
 
 ### 3. Setup Your Server
-In `src/main.rs`, you can use the following template to set up a basic server:
+Setup your server in `src/main.rs`
 ```rust
 use hyper::{Server};
 use std::net::SocketAddr;
@@ -43,7 +43,6 @@ use std::sync::Arc;
 use hyper::service::make_service_fn;
 
 mod app;
-mod app_routes;
 mod routes;
 
 #[tokio::main(flavor = "current_thread")]
@@ -66,7 +65,7 @@ async fn main() {
 ```
 
 ### 4. Define Your Routes
-In the `web` module (usually a file named `web.rs` in the root), use Integra's routing system:
+Define your modular routes in `app_routes.rs`
 ```rust
 use crate::app::{index, greet};
 use integra::core::router::Route;
@@ -78,7 +77,6 @@ pub fn initialize_routes() {
 ```
 
 ### 5. Define Your App
-In the `app` module (usually a file named `app.rs` in the root):
 ```rust
 use hyper::{Body, Request, Response}; 
 
