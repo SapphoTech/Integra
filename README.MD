@@ -65,18 +65,39 @@ async fn main() {
 ```
 
 ### 4. Define Your Routes
-Define your modular routes in `app_routes.rs`
+1. Define your modular routes in `src/routes/app_routes.rs`
 ```rust
-use crate::app::{index, greet};
 use integra::core::router::Route;
+use crate::app::{index, greet};
 
-pub fn initialize_routes() {
-   Route::get("/", index);
-   Route::get("/hello", greet);
+pub fn routes() -> Vec<Route> {
+    vec![
+        Route::get("/", index),
+        Route::get("/hello", greet)
+    ]
 }
+```
+2. Include app_routes.rs in `src/routes/mod.rs`
+```rust
+pub mod app_routes;
+```
+3. Collect all routes in `src/web.rs`
+```rust
+use crate::routes::app_routes;
+use integra::core::router::Router;
+use integra::routes;
+use integra::route_collector;
+
+pub fn get_all_routes() -> Router {
+    route_collector!(
+        app_routes
+    )
+}
+
 ```
 
 ### 5. Define Your App
+Define your app for app_routes in `src/app.rs`
 ```rust
 use hyper::{Body, Request, Response}; 
 
