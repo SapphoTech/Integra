@@ -1,8 +1,7 @@
 [package]
 name = "integra"
-version = "0.0.3"
+version = "0.0.5"
 edition = "2021"
- 
 authors = ["SapphoTech"]
 description = "Integra is a sleek, elegant, performant web framework for Rust, harnessing the power of the hyper library."
 license = "Apache-2.0"
