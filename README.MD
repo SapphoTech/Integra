@@ -3,7 +3,8 @@
 
 Integra is a sleek, performant web framework for Rust, harnessing the power of the `hyper` library.
 
-![Crates.io](https://img.shields.io/crates/v/integra) 
+![Crates.io](https://img.shields.io/crates/v/integra)
+[GitHub repository](https://github.com/SapphoTech/Integra/)
 
 ## 🌟 Features
 
@@ -68,16 +69,14 @@ Integra is a sleek, performant web framework for Rust, harnessing the power of t
 
 4. **Define Your App**: In the `app` module (usually a file named `app.rs` in the root):
    ```rust
-    use hyper::{Body, Request, Response};
-    use std::pin::Pin;
-    use std::future::Future;
+    use hyper::{Body, Request, Response}; 
 
-    pub fn index(_req: Request<Body>) -> Pin<Box<dyn Future<Output = Response<Body>> + Send>> {
-        Box::pin(async { Response::new(Body::from("Root path")) })
+    pub async fn index(_req: Request<Body>) -> Response<Body> {
+        Response::new(Body::from("Root path"))
     }
 
-    pub fn greet(_req: Request<Body>) -> Pin<Box<dyn Future<Output = Response<Body>> + Send>> {
-        Box::pin(async { Response::new(Body::from("Hello!")) })
+    pub async fn greet(_req: Request<Body>) -> Response<Body> {
+        Response::new(Body::from("Hello!"))
     }
    ```
 
@@ -88,6 +87,14 @@ To-do
 ## 🎯 ROADMAP 
  
 - **Routing system**
+  - [ ] **Modules**
+    - ☐ Define application's structure using modules
+    - ☐ Module encapsulation
+    - ☐ Shared modules
+  - [ ] **Controllers**
+    - ☐ Declarative routes using macro attributes (e.g., `#[get("/hello/<name>/<age>")])`
+    - ☐ Route parameters
+    - ☐ Request, Response objects handling
   - [ ] **Supported requests**
     - [x] GET
     - [ ] POST
@@ -98,14 +105,6 @@ To-do
     - [ ] OPTIONS
     - [ ] TRACE
     - [ ] PATCH
-  - [ ] **Modules**
-    - ☐ Define application's structure using modules
-    - ☐ Module encapsulation
-    - ☐ Shared modules
-  - [ ] **Controllers**
-    - ☐ Declarative routes using macro attributes (e.g., `#[get("/hello/<name>/<age>")])`
-    - ☐ Route parameters
-    - ☐ Request, Response objects handling
   - [ ] **Middleware**
     - ☐ Middleware for request/response manipulation
     - ☐ Execution order
