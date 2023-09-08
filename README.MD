@@ -24,7 +24,7 @@ Integra is a sleek, performant web framework for Rust, harnessing the power of t
 2. **Add Dependencies**: Open `Cargo.toml` and add the following lines under `[dependencies]`:
    ```toml
     [dependencies]
-    integra = { version = "0.0.4" }
+    integra = { version = "0.0.5" }
     tokio = { version = "1", features = ["full"] }
     hyper = "0.14"
    ```
