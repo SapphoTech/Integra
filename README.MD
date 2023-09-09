@@ -26,7 +26,7 @@ cd integra_project
 Open `Cargo.toml` and add the following lines under `[dependencies]`:
 ```toml
 [dependencies]
-integra = { version = "0.0.5" }
+integra = { version = "0.0.7" }
 tokio = { version = "1", features = ["full"] }
 hyper = "0.14"
 ```
