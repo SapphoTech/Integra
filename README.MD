@@ -105,12 +105,12 @@ To-do
 ## 🎯 ROADMAP 
  
 - **Routing system**
-  - [x] **Modules**
+  - [ ] **Modules**
     - [x] Define application's structure using modules
     - [x] Module encapsulation
     - [ ] Shared modules
   - [x] **Controllers**
-    - [x] Route parameters
+    - [ ] Route parameters
     - [x] Request, Response objects handling
   - [ ] **Supported requests**
     - [x] GET
