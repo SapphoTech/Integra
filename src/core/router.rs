@@ -1,12 +1,13 @@
 use hyper::{Body, Request, Response, Method};
 use hyper::service::Service;
 use std::collections::HashMap;
-use std::sync::{Arc, Mutex};
+use std::sync::{Arc};
 use std::convert::Infallible;
 use std::future::Future;
 use std::pin::Pin;
 use std::task::Context;
 use tokio::macros::support::Poll;
+use std::sync::Mutex;
 
 pub struct ServiceWithRouter {
     pub router: Arc<Router>,
@@ -22,7 +23,7 @@ impl Service<Request<Body>> for ServiceWithRouter {
     }
 
     fn call(&mut self, req: Request<Body>) -> Self::Future {
-        let router = self.router.clone();
+        let router = Arc::clone(&self.router);
         Box::pin(async move {
             if let Some(handler) = router.get_handler(&req) {
                 Ok(handler.call(req).await)
@@ -101,24 +102,16 @@ impl Router {
 
     pub fn register(&mut self, route: Route) {
         if route.path.contains("{") && route.path.contains("}") {
+            // Use lock() instead of write()
             let mut param_routes = self.param_routes.lock().unwrap();
             param_routes.insert((route.method, route.path), route.handler);
         } else {
+            // Use lock() instead of write()
             let mut routes = self.routes.lock().unwrap();
             routes.insert((route.method, route.path), route.handler);
         }
     }
-    
 
-    
-    pub async fn route(&self, req: Request<Body>) -> Result<Response<Body>, Infallible> {
-        if let Some(handler) = self.get_handler(&req) {
-            Ok(handler.call(req).await)
-        } else {
-            Ok(Response::new(Body::from("Not Found")))
-        }
-    }
-    
     pub fn get_handler(&self, req: &Request<Body>) -> Option<Arc<dyn Handler>> {
         let path = req.uri().path().to_string();
         let method = req.method().clone();
