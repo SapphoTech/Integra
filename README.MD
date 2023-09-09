@@ -110,7 +110,7 @@ To-do
     - [x] Module encapsulation
     - [ ] Shared modules
   - [x] **Controllers**
-    - [ ] Route parameters
+    - [x] Route parameters
     - [x] Request, Response objects handling
   - [ ] **Supported requests**
     - [x] GET

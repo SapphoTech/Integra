@@ -22,9 +22,13 @@ impl Service<Request<Body>> for ServiceWithRouter {
     }
 
     fn call(&mut self, req: Request<Body>) -> Self::Future {
-        let router = self.router.clone(); 
+        let router = self.router.clone();
         Box::pin(async move {
-            router.route(req).await
+            if let Some(handler) = router.get_handler(&req) {
+                Ok(handler.call(req).await)
+            } else {
+                Ok(Response::new(Body::from("Not Found")))
+            }
         })
     }
 }
@@ -73,39 +77,88 @@ impl Clone for Route {
 impl Clone for Router {
     fn clone(&self) -> Self {
         let routes = self.routes.lock().unwrap();
+        let param_routes = self.param_routes.lock().unwrap();
         Router {
             routes: Mutex::new(routes.clone()),
+            param_routes: Mutex::new(param_routes.clone())
         }
     }
 }
 
+
 pub struct Router {
     routes: Mutex<HashMap<(Method, String), Arc<dyn Handler>>>,
+    param_routes: Mutex<HashMap<(Method, String), Arc<dyn Handler>>>,
 }
 
 impl Router {
     pub fn new() -> Self {
         Router {
             routes: Mutex::new(HashMap::new()),
+            param_routes: Mutex::new(HashMap::new()),
         }
-    }
+    }    
 
     pub fn register(&mut self, route: Route) {
-        let mut routes = self.routes.lock().unwrap();
-        routes.insert((route.method, route.path), route.handler);
-    }
-
-    pub async fn route(&self, req: Request<Body>) -> Result<Response<Body>, Infallible> {
-        let handler_option = {
-            let routes = self.routes.lock().unwrap();
-            routes.get(&(req.method().clone(), req.uri().path().to_string())).cloned()
-        };
-    
-        match handler_option {
-            Some(handler) => Ok(handler.call(req).await),
-            None => Ok(Response::new(Body::from("Not Found")))
+        if route.path.contains("{") && route.path.contains("}") {
+            let mut param_routes = self.param_routes.lock().unwrap();
+            param_routes.insert((route.method, route.path), route.handler);
+        } else {
+            let mut routes = self.routes.lock().unwrap();
+            routes.insert((route.method, route.path), route.handler);
         }
     }
+    
+
+    
+    pub async fn route(&self, req: Request<Body>) -> Result<Response<Body>, Infallible> {
+        if let Some(handler) = self.get_handler(&req) {
+            Ok(handler.call(req).await)
+        } else {
+            Ok(Response::new(Body::from("Not Found")))
+        }
+    }
+    
+    pub fn get_handler(&self, req: &Request<Body>) -> Option<Arc<dyn Handler>> {
+        let path = req.uri().path().to_string();
+        let method = req.method().clone();
+
+        // Try to fetch from regular routes first
+        {
+            let routes = self.routes.lock().unwrap();
+            if let Some(handler) = routes.get(&(method.clone(), path.clone())) {
+                return Some(handler.clone());
+            }
+        }
+
+        // If not found, try to fetch from parameterized routes
+        {
+            let param_routes = self.param_routes.lock().unwrap();
+            for ((route_method, route_path), handler) in param_routes.iter() {
+                if method == *route_method && route_path_matches(&path, route_path) {
+                    return Some(handler.clone());
+                }
+            }
+        }
+        
+        None
+    }
+}
+
+fn route_path_matches(request_path: &str, route_path: &str) -> bool {
+    let request_segments: Vec<&str> = request_path.split('/').collect();
+    let route_segments: Vec<&str> = route_path.split('/').collect();
+
+    if request_segments.len() != route_segments.len() {
+        return false;
+    }
+
+    for (req_seg, route_seg) in request_segments.iter().zip(route_segments.iter()) {
+        if !route_seg.starts_with("{") && req_seg != route_seg {
+            return false;
+        }
+    }
+    true
 }
 
 // The routes! macro
