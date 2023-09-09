@@ -105,13 +105,13 @@ To-do
 ## 🎯 ROADMAP 
  
 - **Routing system**
-  - [ ] **Modules**
-    - ☐ Define application's structure using modules
-    - ☐ Module encapsulation
-    - ☐ Shared modules
-  - [ ] **Controllers**
-    - ☐ Route parameters
-    - ☐ Request, Response objects handling
+  - [x] **Modules**
+    - [x] Define application's structure using modules
+    - [x] Module encapsulation
+    - [ ] Shared modules
+  - [x] **Controllers**
+    - [x] Route parameters
+    - [x] Request, Response objects handling
   - [ ] **Supported requests**
     - [x] GET
     - [ ] POST
@@ -123,32 +123,32 @@ To-do
     - [ ] TRACE
     - [ ] PATCH
   - [ ] **Middleware**
-    - ☐ Middleware for request/response manipulation
-    - ☐ Execution order
+    - [ ] Middleware for request/response manipulation
+    - [ ] Execution order
   - [ ] **Guards**
-    - ☐ Route guards for authentication and authorization
+    - [ ] Route guards for authentication and authorization
   - [ ] **Interceptors**
-    - ☐ Transforming responses
-    - ☐ Handling request/response lifecycle
+    - [ ] Transforming responses
+    - [ ] Handling request/response lifecycle
   - [ ] **Macro Attributes**
-    - ☐ Custom macro attributes for extracting custom data from requests
+    - [ ] Custom macro attributes for extracting custom data from requests
 
 - **Framework Architecture**
   - [ ] **Models**
-    - ☐ Integration with Diesel ORM
-    - ☐ Support for migrations
-    - ☐ CRUD operations
-    - ☐ Advanced querying and filtering
+    - [ ] Integration with Diesel ORM
+    - [ ] Support for migrations
+    - [ ] CRUD operations
+    - [ ] Advanced querying and filtering
   - [ ] **Repositories**
-    - ☐ Generic Repository pattern
-    - ☐ User Repository
+    - [ ] Generic Repository pattern
+    - [ ] User Repository
   - [ ] **Providers and Services**
-    - ☐ Custom providers
-    - ☐ Singleton services
+    - [ ] Custom providers
+    - [ ] Singleton services
   - [ ] **Views**
-    - ☐ Template engine integration
-    - ☐ Support for dynamic content rendering
-    - ☐ Layouts and partials
+    - [ ] Template engine integration
+    - [ ] Support for dynamic content rendering
+    - [ ] Layouts and partials
 
 ## 🤝 Contributing
 
