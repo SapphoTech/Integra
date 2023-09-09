@@ -37,13 +37,14 @@ Setup your server in `src/main.rs`
 use hyper::{Server};
 use std::net::SocketAddr;
 use std::convert::Infallible;
-use crate::routes::get_all_routes;
+use crate::web::get_all_routes;
 use integra::core::router::{ServiceWithRouter};
 use std::sync::Arc;
 use hyper::service::make_service_fn;
 
-mod app;
 mod routes;
+mod web;
+mod app;
 
 #[tokio::main(flavor = "current_thread")]
 async fn main() {
@@ -61,20 +62,6 @@ async fn main() {
     if let Err(e) = server.await {
         eprintln!("server error: {}", e);
     }
-}
-```
-
-### 4. Define Your Routes
-1. Define your modular routes in `src/routes/app_routes.rs`
-```rust
-use integra::core::router::Route;
-use crate::app::{index, greet};
-
-pub fn routes() -> Vec<Route> {
-    vec![
-        Route::get("/", index),
-        Route::get("/hello", greet)
-    ]
 }
 ```
 2. Include app_routes.rs in `src/routes/mod.rs`
