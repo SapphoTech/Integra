@@ -24,8 +24,6 @@ git clone https://github.com/SapphoTech/integra-starter-template.git my_project_
 To-do
 
 ## 🎯 ROADMAP 
- 
-- **Routing system**
   - [ ] **Modules**
     - [x] Define application's structure using modules
     - [x] Module encapsulation
@@ -54,7 +52,6 @@ To-do
   - [ ] **Macro Attributes**
     - [ ] Custom macro attributes for extracting custom data from requests
 
-- **Framework Architecture**
   - [ ] **Models**
     - [ ] Integration with Diesel ORM
     - [ ] Support for migrations
