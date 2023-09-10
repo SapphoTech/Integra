@@ -4,7 +4,6 @@
 Integra is a sleek, performant web framework for Rust, harnessing the power of the `hyper` library.
 
 ![Crates.io](https://img.shields.io/crates/v/integra)
-[GitHub repository](https://github.com/SapphoTech/Integra/)
 
 ## 🌟 Features
 
