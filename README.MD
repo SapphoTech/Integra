@@ -23,7 +23,7 @@ This repository provides a quick way to get started with `integra`.
 1. Clone this repository:
 ```bash
 git clone https://github.com/SapphoTech/integra-starter-template.git my_project_name
-
+```
 ## 📘 Usage
 
 To-do
