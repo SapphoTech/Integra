@@ -5,6 +5,8 @@ edition = "2021"
 authors = ["SapphoTech"]
 description = "Integra is a sleek, elegant, performant web framework for Rust, harnessing the power of the hyper library."
 license = "Apache-2.0"
+repository = "https://github.com/SapphoTech/Integra/"
+readme = "README.MD"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
