@@ -14,16 +14,11 @@ Integra is a sleek, performant web framework for Rust, harnessing the power of t
 
 ## 🚀 Quickstart with Integra
 
-# Integra Starter Template
-
-This repository provides a quick way to get started with `integra`.
-
-## Quick Start
-
 1. Clone this repository:
 ```bash
 git clone https://github.com/SapphoTech/integra-starter-template.git my_project_name
 ```
+
 ## 📘 Usage
 
 To-do
