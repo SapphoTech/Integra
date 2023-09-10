@@ -14,88 +14,15 @@ Integra is a sleek, performant web framework for Rust, harnessing the power of t
 
 ## 🚀 Quickstart with Integra
 
-### 1. Create a New Project
-Start by creating a new Rust project.
+# Integra Starter Template
+
+This repository provides a quick way to get started with `integra`.
+
+## Quick Start
+
+1. Clone this repository:
 ```bash
-cargo new integra_project
-cd integra_project
-```
-
-### 2. Add Dependencies
-Open `Cargo.toml` and add the following lines under `[dependencies]`:
-```toml
-[dependencies]
-integra = { version = "0.0.8" }
-tokio = { version = "1", features = ["full"] }
-hyper = { version = "0.14" }
-```
-
-### 3. Setup Your Server
-Setup your server in `src/main.rs`
-```rust
-use hyper::{Server};
-use std::net::SocketAddr;
-use std::convert::Infallible;
-use crate::web::get_all_routes;
-use integra::core::router::{ServiceWithRouter};
-use std::sync::Arc;
-use hyper::service::make_service_fn;
-
-mod routes;
-mod web;
-mod app;
-
-#[tokio::main(flavor = "current_thread")]
-async fn main() {
-    let router = get_all_routes();
-    let shared_router = Arc::new(router);
-
-    let make_svc = make_service_fn(move |_conn| {
-        let service = ServiceWithRouter { router: shared_router.clone() };
-        async move { Ok::<_, Infallible>(service) }
-    });
-
-    let addr = SocketAddr::from(([127, 0, 0, 1], 3011));
-    let server = Server::bind(&addr).serve(make_svc);
-
-    if let Err(e) = server.await {
-        eprintln!("server error: {}", e);
-    }
-}
-```
-2. Include app_routes.rs in `src/routes/mod.rs`
-```rust
-pub mod app_routes;
-```
-3. Collect all routes in `src/web.rs`
-```rust
-use crate::routes::app_routes;
-use integra::core::router::Router;
-use integra::routes;
-use integra::route_collector;
-
-pub fn get_all_routes() -> Router {
-    route_collector!(
-        app_routes
-    )
-}
-
-```
-
-### 5. Define Your App
-Define your app for app_routes in `src/app.rs`
-```rust
-use hyper::{Body, Request, Response}; 
-
-pub async fn index(_req: Request<Body>) -> Response<Body> {
-    Response::new(Body::from("Root path"))
-}
-
-pub async fn greet(_req: Request<Body>) -> Response<Body> {
-    Response::new(Body::from("Hello!"))
-}
-```
-
+git clone https://github.com/SapphoTech/integra-starter-template.git my_project_name
 
 ## 📘 Usage
 
