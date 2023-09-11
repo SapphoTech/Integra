@@ -16,7 +16,7 @@ Will become the first highly pefrormant backend framework with MVC structure!
 
 ## 🔥🔥🔥 Performance Benchmarks 🔥🔥🔥
 
-The following benchmarks were conducted on an M1 Pro machine using a single CPU core. The test was performed using the `wrk` benchmarking tool on a basic project setup. This results were close when I used hello world with salvo.
+The following benchmarks were conducted on an M2 Pro machine using a single CPU core. The test was performed using the `wrk` benchmarking tool on a basic project setup. This results were close when I used hello world with salvo.
 
 ```bash
 wrk http://127.0.0.1:3029/hello -t12 -c400 -d30s
